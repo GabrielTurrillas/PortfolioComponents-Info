@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components';
 import { device } from './sizes';
 
-const Info = ({ imgPath, alt, title, text, }) => {
+const Info = ({ english, imgPath, alt, title, text, engText }) => {
   return (
     <>
       <GlobalStyles />
@@ -12,7 +12,7 @@ const Info = ({ imgPath, alt, title, text, }) => {
         </TitleArea>
         <TextArea>
           <Text>
-            {text}
+            {english ? engText : text}
           </Text>
         </TextArea>
         <ImgArea>
