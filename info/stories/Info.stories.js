@@ -1,5 +1,6 @@
 import React from 'react';
-import Info from './Info';
+import Info from '../Info';
+import ClientSide from './ClientSide.svg'
 
 export default {
   title: 'Screens/Info',
@@ -9,5 +10,8 @@ export default {
 const Template = (args) => <Info {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  imgPath: ClientSide,
+  alt: 'Client Side'
+};
 
