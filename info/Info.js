@@ -2,22 +2,17 @@ import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components';
 import { device } from './sizes';
 
-const Info = ({ imgPath, alt }) => {
+const Info = ({ imgPath, alt, title, text, }) => {
   return (
     <>
       <GlobalStyles />
       <Container>
         <TitleArea>
-          <Title>Title</Title>
+          <Title>{title}</Title>
         </TitleArea>
         <TextArea>
           <Text>
-            Quis Lorem sit culpa velit dolore commodo amet
-            enim do laborum
-            fugiat qui sunt aute. Duis dolore aute magna enim.
-            Laboris velit ex anim dolore enim ea anim do aute non.
-            Excepteur ea laborum ex amet amet cupidatat. Non laborum aliqua
-            labore incididunt nostrud elit consequat. Sint id eiusmod magna
+            {text}
           </Text>
         </TextArea>
         <ImgArea>
@@ -33,14 +28,16 @@ export default Info
 const Container = styled.div`
   display:grid;
   grid-template-columns:1fr;
-  grid-template-rows:1fr 2fr 3fr;
+  grid-template-rows:1fr 2fr 2fr;
   grid-template-areas:'TitleArea'
-                      'TextArea'
-                      'ImgArea';
+  'TextArea'
+  'ImgArea';
   justify-content:center;
   background:#010606;
   color:white;
+  padding:0 1rem;
   @media ${device.mobileS}{
+    grid-template-rows:1fr 2fr 3fr;
     padding:0 2rem;
   }
   @media ${device.mobileL}{
@@ -88,7 +85,6 @@ const TextArea = styled.div`
   justify-content:center;
   flex-direction:column;
   font-size:18px;
-  padding:0 1rem;
   grid-area:TextArea;
 `;
 const Text = styled.article`
